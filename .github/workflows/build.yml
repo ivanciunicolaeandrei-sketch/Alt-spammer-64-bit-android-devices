@@ -13,7 +13,11 @@ jobs:
     steps:
       - name: Download source
         uses: actions/checkout@v7
-
+      - name: Check mod manifest
+        run: |
+          pwd
+          ls -la
+          test -f mod.json && echo "mod.json found" || echo "mod.json MISSING"
       - name: Build Android 64-bit mod
         id: build
         uses: geode-sdk/build-geode-mod@main
