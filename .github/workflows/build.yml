@@ -1,0 +1,28 @@
+name: Build Alt Spammer
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download source
+        uses: actions/checkout@v7
+
+      - name: Build Android 64-bit mod
+        id: build
+        uses: geode-sdk/build-geode-mod@main
+        with:
+          target: Android64
+          sdk: latest
+
+      - name: Upload mod
+        uses: actions/upload-artifact@v7
+        with:
+          name: Alt-Spammer-Android64
+          path: ${{ steps.build.outputs.build-output }}/*.geode
