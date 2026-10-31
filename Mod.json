@@ -1,0 +1,33 @@
+{
+  "geode": "5.10.0",
+  "gd": {
+    "android": "2.2081"
+  },
+  "id": "ivanciunicolaeandrei.alt_spammer",
+  "name": "Alt Spammer",
+  "version": "1.0.0",
+  "developer": "Ivanciunicolaeandrei",
+  "description": "Configurable alternating input buffer for Geometry Dash.",
+  "settings": {
+    "buffer_frames": {
+      "type": "int",
+      "name": "Buffer Frames",
+      "description": "Input buffer window.",
+      "default": 1,
+      "min": 0,
+      "max": 30
+    },
+    "early_buffer": {
+      "type": "bool",
+      "name": "Early Buffer",
+      "description": "Enable early input buffering.",
+      "default": true
+    },
+    "late_buffer": {
+      "type": "bool",
+      "name": "Late Buffer",
+      "description": "Enable late input buffering.",
+      "default": false
+    }
+  }
+}
